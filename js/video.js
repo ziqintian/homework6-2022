@@ -33,7 +33,7 @@ document.querySelector("#slower").addEventListener("click", function(){
 // Speed Up
 document.querySelector("#faster").addEventListener("click", function(){
 	console.log("Faster Video");
-	video.playbackRate *= 1.05;
+	video.playbackRate /= 0.95;
 	console.log("The speed of the video is", video.playbackRate);
 });
 
@@ -41,7 +41,7 @@ document.querySelector("#faster").addEventListener("click", function(){
 document.querySelector("#skip").addEventListener("click", function(){
 	console.log("Skip 15 seconds");
 	video.currentTime += 15;
-	if (video.currentTime > video.duration) {
+	if (video.currentTime >= video.duration) {
 		video.currentTime = 0;
 	}
 	console.log("The current location of the video is", video.currentTime);
